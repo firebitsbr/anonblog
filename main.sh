@@ -1,0 +1,27 @@
+source config
+sed -i.bak '2s/.*/HiddenServicePort 80 127.0.0.1:'$PORT'/' torrc
+if [ $# == 1 ]; then
+	COMMAND=$1
+else
+	COMMAND="help"
+fi
+
+if [ $COMMAND == "start" ]; then
+	echo "Starting..."
+	./bbserver $PORT ./site/
+	if [ $? != 0 ]; then
+		echo "It seems the server failed to start. Please try again."
+		exit
+	fi
+	echo "Started. Press Ctrl+C to exit."
+	./tor --quiet -f torrc
+	if [ $? == 255  ]; then
+		echo "It seems Tor failed to start. Rerunning with output enabled."
+		./tor --quiet -f torrc
+	fi
+	killall bbserver
+elif [ $COMMAND == "help" ]; then
+	echo "this is help"
+else
+	echo "u w0t m8"
+fi
