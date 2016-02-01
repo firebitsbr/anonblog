@@ -149,18 +149,15 @@ int main(int argc, char **argv)
 
 	if( argc < 3  || argc > 3 || !strcmp(argv[1], "-?") ) {
 		(void)printf("Syntax: bbserver Port-Number Top-Directory\t\tversion %d\n\n"
-	"\tnweb is a small and very safe mini web server\n"
-	"\tnweb only servers out file/web pages with extensions named below\n"
-	"\t and only from the named directory or its sub-directories.\n"
-	"\tThere is no fancy features = safe and secure.\n\n"
-	"\tExample: nweb 8181 /home/nwebdir &\n\n"
+	"\tbbserver is a small and very safe mini web server\n"
+	"\tbbserver only servers out file/web pages with extensions named below\n"
+	"\tand only from site/ and its sub-directories.\n"
+	"\tThere is no fancy features, making it safe and secure.\n\n"
 	"\tOnly Supports:", VERSION);
 		for(i=0;extensions[i].ext != 0;i++)
 			(void)printf(" %s",extensions[i].ext);
 
-		(void)printf("\n\tNot Supported: URLs including \"..\", Java, Javascript, CGI\n"
-	"\tNot Supported: directories / /etc /bin /lib /tmp /usr /dev /sbin \n"
-	"\tNo warranty given or implied\n\tBased on code by Nigel Griffiths nag@uk.ibm.com\n"  );
+		(void)printf("\n\nHTTP server based on code by Nigel Griffiths nag@uk.ibm.com\n");
 		exit(0);
 	}
 	if( !strncmp(argv[2],"/"   ,2 ) || !strncmp(argv[2],"/etc", 5 ) ||
