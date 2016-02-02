@@ -24,7 +24,8 @@ if [ $COMMAND == "start" ]; then
 	fi
 	killall bbserver
 elif [ $COMMAND == "help" ]; then
-	echo "this is help"
+	echo "Syntax ./main.sh start"
+	echo "For more help see the README"
 else
 	echo "Unrecognized command. Run with no args for help."
 fi
