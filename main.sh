@@ -7,9 +7,12 @@ else
 fi
 
 if [ $COMMAND == "start" ]; then
+	killall bbserver 2> /dev/null
 	echo "Starting..."
 	./bbserver $PORT ./site/
-	if [ $? != 0 ]; then
+	pgrep bbserver > /dev/null
+	RESULT=$?
+	if [ ! "${RESULT}" -eq "0" ]; then
 		echo "It seems the server failed to start. Please try again."
 		exit
 	fi
@@ -17,7 +20,7 @@ if [ $COMMAND == "start" ]; then
 	./tor --quiet -f torrc
 	if [ $? == 255  ]; then
 		echo "It seems Tor failed to start. Rerunning with output enabled."
-		./tor --quiet -f torrc
+		./tor -f torrc
 	fi
 	killall bbserver
 elif [ $COMMAND == "help" ]; then
