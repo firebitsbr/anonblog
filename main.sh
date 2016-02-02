@@ -1,5 +1,12 @@
-source config
-sed -i.bak '2s/.*/HiddenServicePort 80 127.0.0.1:'$PORT'/' torrc
+source config/abconfig
+LD_LIBRARY_PATH="./lib"
+if [ $(uname "-m") == "x86_64" ]; then
+	TOR_EXECUTABLE="bin/tor64"
+else
+	TOR_EXECUTABLE="bin/tor"
+	
+fi
+sed -i.bak '2s/.*/HiddenServicePort 80 127.0.0.1:'$PORT'/' config/torrc
 if [ $# == 1 ]; then
 	COMMAND=$1
 else
@@ -9,7 +16,7 @@ fi
 if [ $COMMAND == "start" ]; then
 	killall bbserver 2> /dev/null
 	echo "Starting..."
-	./bbserver $PORT ./site/
+	bin/bbserver $PORT ./site/
 	pgrep bbserver > /dev/null
 	RESULT=$?
 	if [ ! "${RESULT}" -eq "0" ]; then
@@ -17,10 +24,10 @@ if [ $COMMAND == "start" ]; then
 		exit
 	fi
 	echo "Started. Press Ctrl+C to exit."
-	./tor --quiet -f torrc
-	if [ $? == 255  ]; then
+	$TOR_EXECUTABLE --quiet -f config/torrc
+	if [ $? != 0  ]; then
 		echo "It seems Tor failed to start. Rerunning with output enabled."
-		./tor -f torrc
+		$TOR_EXECUTABLE -f config/torrc
 	fi
 	killall bbserver
 elif [ $COMMAND == "help" ]; then
