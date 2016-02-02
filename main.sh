@@ -26,5 +26,5 @@ if [ $COMMAND == "start" ]; then
 elif [ $COMMAND == "help" ]; then
 	echo "this is help"
 else
-	echo "u w0t m8"
+	echo "Unrecognized command. Run with no args for help."
 fi
