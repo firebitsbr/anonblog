@@ -160,24 +160,13 @@ int main(int argc, char **argv)
 		(void)printf("\n\nHTTP server based on code by Nigel Griffiths nag@uk.ibm.com\n");
 		exit(0);
 	}
-<<<<<<< HEAD
-	/*
-=======
->>>>>>> a9703b14521df6183f059e2c1667f6f429a9ff19
 	if( !strncmp(argv[2],"/"   ,2 ) || !strncmp(argv[2],"/etc", 5 ) ||
 	    !strncmp(argv[2],"/bin",5 ) || !strncmp(argv[2],"/lib", 5 ) ||
 	    !strncmp(argv[2],"/tmp",5 ) || !strncmp(argv[2],"/usr", 5 ) ||
 	    !strncmp(argv[2],"/dev",5 ) || !strncmp(argv[2],"/sbin",6) ){
-<<<<<<< HEAD
-		(void)printf("ERROR: Bad top directory %s, ",argv[2]);
-		exit(3);
-	}
-	*/
-=======
 		(void)printf("ERROR: Bad top directory %s, see nweb -?\n",argv[2]);
 		exit(3);
 	}
->>>>>>> a9703b14521df6183f059e2c1667f6f429a9ff19
 	if(chdir(argv[2]) == -1){ 
 		(void)printf("ERROR: Can't Change to directory %s\n",argv[2]);
 		exit(4);
@@ -190,11 +179,7 @@ int main(int argc, char **argv)
 	for(i=0;i<32;i++)
 		(void)close(i);		/* close open files */
 	(void)setpgrp();		/* break away from process group */
-<<<<<<< HEAD
-	logger(LOG,"bbserver starting",argv[1],getpid());
-=======
 	logger(LOG,"nweb starting",argv[1],getpid());
->>>>>>> a9703b14521df6183f059e2c1667f6f429a9ff19
 	/* setup the network socket */
 	if((listenfd = socket(AF_INET, SOCK_STREAM,0)) <0)
 		logger(ERROR, "system call","socket",0);
