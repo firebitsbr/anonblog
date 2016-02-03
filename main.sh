@@ -1,5 +1,5 @@
 source config/abconfig
-LD_LIBRARY_PATH="./lib"
+export LD_LIBRARY_PATH="./lib"
 if [ $(uname "-m") == "x86_64" ]; then
 	TOR_EXECUTABLE="bin/tor64"
 else
