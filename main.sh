@@ -16,6 +16,7 @@ fi
 if [ $COMMAND == "start" ]; then
 	killall bbserver 2> /dev/null
 	echo "Starting..."
+	echo ""
 	bin/bbserver $PORT ./site/
 	pgrep bbserver > /dev/null
 	RESULT=$?
@@ -23,6 +24,8 @@ if [ $COMMAND == "start" ]; then
 		echo "It seems the server failed to start. Please try again."
 		exit
 	fi
+	echo "Your .onion address will be in the 'keys' folder, if you care about it, remember to safely back it up!"
+	echo ""
 	echo "Started. Press Ctrl+C to exit."
 	$TOR_EXECUTABLE --quiet -f config/torrc
 	if [ $? != 0  ]; then
