@@ -1,5 +1,5 @@
 # ☠ AnonBlog ☠
-Anonblog lets you asily publish blogs/static sites over the Tor network for anonymity, using a small, lightweight, and extremely secure webserver to prevent being deanonymized.
+Anonblog lets you easily publish blogs/static sites over the Tor network for anonymity, using a small, lightweight, and extremely secure webserver to prevent being deanonymized.
 
 ## Usage
 
@@ -9,7 +9,6 @@ Usage is simple - No installation required!
      - **Optional:** You can change the port that the server uses by editing `config/abconfig`. The hidden service will always be accessible on port 80, no matter what port the server itself runs on.
  - Post to your blog by running `./bb.sh`. To add custom files, images, etc., put them under `site`. (You can also put any other files you want there.)
 - [See here for more information regarding using bashblog (You can use markdown 😁)](https://github.com/cfenollosa/bashblog)
-- 
 
 
 ## Warning
