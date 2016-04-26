@@ -1,3 +1,4 @@
+/* Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
