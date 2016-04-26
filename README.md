@@ -39,7 +39,7 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 - Be sure to scrub any images/other files of metadata before publishing them.
 
 
-**For more information regarding Tor hidden services, see [here](https://www.torproject.org/docs/hidden-services.html.en).**
+**For more information regarding Tor hidden services, see https://www.torproject.org/docs/hidden-services.html.en.**
 
 
 ## Contributing
@@ -68,7 +68,7 @@ Tip us coffee money to motivate us to keep doing what we do:
 - [The Tor Project](https://torproject.org/) for creating Tor.
 - Nigel Griffiths (nag@uk.ibm.com) for creating Nweb (bbserver is based on Nweb)
 - All who contributed to [Bashblog](https://github.com/cfenollosa/bashblog), a static blog generator included with AnonBlog.
-- [Kevin Froman](https://chaoswebs.net/?page=about) and [Duncan Simpson](https://k7dxs.xyz/), the main AnonBlog devs.
+- [Kevin Froman](https://chaoswebs.net/?page=about) and [Duncan X. Simpson](https://www.k7dxs.xyz/), the main AnonBlog devs.
 
 
 Tor & the Onion logo are registered trademarks of The Tor Project, Inc. This software is not endorsed by or affiliated with The Tor Project, Inc.
