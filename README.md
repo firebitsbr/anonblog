@@ -1,6 +1,6 @@
 ![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
 
-Anonblog is a easy way to anonymously publish blogs/static sites over the Tor network, using a small, lightweight, and secure webserver to prevent being deanonymized.
+Anonblog is an easy way to anonymously publish blogs/static sites over the Tor network, using a small, lightweight, and secure webserver to prevent being deanonymized.
 
 The goal of this project is to be secure, lightweight, & simple, while maintaining easy portability to all Unix based systems.
 
