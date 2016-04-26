@@ -37,7 +37,7 @@ In any case, the longer a hidden service is ran, the higher its chance of being 
 
 Also, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
 
-Note that your ISP/others can generally see that you are using the Tor network (but not what you do with it), this is not a major deal in "more free" countries, but in some areas this may warrant suspicion of your activites and make you a target for law enforcement.
+Note that your ISP/others can generally see that you are using the Tor network (but not what you do with it), this is not a major deal in "more free" countries, but in some areas this may warrant suspicion of your activites.
 
 Hidden services can also be discovered by bad Tor nodes (their existence, not nessasarily their location). This is a limitation in the Tor network rather than in Anonblog.
 
