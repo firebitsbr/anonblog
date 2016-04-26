@@ -1,6 +1,6 @@
 ![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
 
-Anonblog lets you easily publish blogs/static sites over the Tor network for anonymity, using a small, lightweight, and extremely secure webserver to prevent being deanonymized.
+Anonblog lets you easily publish blogs/static sites over the Tor network for anonymity, using a small, lightweight, and secure webserver to prevent being deanonymized.
 
 ## Usage
 
