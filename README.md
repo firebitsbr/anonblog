@@ -24,7 +24,7 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
 **ALSO**:
 
-- This software is intended to host only static blogs/sites. This software has not been tested for things like forums, chat rooms, etc.
+- This software is intended to host only static blogs/sites. This software can not be used for things like forums, chat rooms, etc. that require server-side capabilities.
 
 - Also, Tor its self is vulnerable to correlation/timing attacks, which may unmask you and your visitors. Tor may also be vulnerable to other unknown attacks.
 
