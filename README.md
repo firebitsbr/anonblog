@@ -30,7 +30,7 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
  - In any case, the longer a hidden service is hosted, the higher its chance of being compromised is, regardless of the server software it is running.
 
-- Site content, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
+- Your sites content, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
 
 - Note: Your ISP/others can generally see that you are using the Tor network (but not what you do with it), this is not a major deal in "more free" countries, but in some areas this may warrant suspicion of your activites.
 
@@ -53,6 +53,14 @@ The current build is for x86-64 proccessors
 The webserver source is in src/bbserver.c
 
 It can be built using GCC 5.8.6 (other versions/compilers untested)
+
+## Donate
+
+![BTC logo](http://i.imgur.com/UQsoecv.png)
+
+Tip us coffee money to motivate us to keep doing what we do:
+
+137aLmDHUCJKv7s8yzNBZ6dE2erob55YF5
 
 
 ## Thanks to:
