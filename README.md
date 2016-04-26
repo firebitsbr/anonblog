@@ -33,9 +33,9 @@ This software is intended to host only static blogs/sites. This is not good soft
 
 Also, Tor its self is vulnerable to correlation/timing attacks, which may unmask you and your visitors. Tor may also be vulnerable to other/unknown attacks.
 
-In any case, the longer a hidden service is ran, the higher its chance of being compromised is, regardless of the server software it is running.
+In any case, the longer a hidden service is hosted, the higher its chance of being compromised is, regardless of the server software it is running.
 
-Also, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
+Also site content, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
 
 Note that your ISP/others can generally see that you are using the Tor network (but not what you do with it), this is not a major deal in "more free" countries, but in some areas this may warrant suspicion of your activites.
 
