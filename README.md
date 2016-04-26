@@ -21,6 +21,8 @@ Usage is simple - No installation required!
 
 The current build is for x86-64 proccessors.
 
+**Anonblog supports a limited amount of file extensions for security reasons, see FILE-TYPES.txt**
+
 ## Warning - *Important Info*
 
 Anonblog is in alpha right now, while we believe it is "pretty good", you should never bet your life or liberty on software, especially software in early development.
