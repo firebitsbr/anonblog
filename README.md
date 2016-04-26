@@ -27,9 +27,9 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
 **ALSO**:
 
-This software is intended to host only static blogs/sites. This is not good software fort things like fourms, chat rooms, etc.
+This software is intended to host only static blogs/sites. This is not good software for things like fourms, chat rooms, etc.
 
-Also, Tor its self is vulnerable to correlation attacks, which may unmask you and your visitors.
+Also, Tor its self is vulnerable to correlation/timing attacks, which may unmask you and your visitors. Tor may also be vulnerable to other/unknown attacks.
 
 In any case, the longer a hidden service is ran, the higher its chance of being compromised is, regardless of the server software it is running.
 
