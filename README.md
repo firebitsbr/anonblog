@@ -8,7 +8,7 @@ The goal of this project is to be secure, lightweight, & simple, while maintaini
 
 ## Download Binary Release
 
-It is recommended that you build the software yourself, but a binary release is available, [Here](https://github.com/beardog108/anonblog/releases/download/v1.0.2/anonblogv1.0.2.tar.gz).
+It is recommended that you build the software yourself, but a binary release is available, [Here](https://github.com/beardog108/anonblog/releases).
 
 ## Usage
 
