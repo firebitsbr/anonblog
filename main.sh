@@ -1,3 +1,4 @@
+# Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information.
 source config/abconfig
 export LD_LIBRARY_PATH="./lib"
 if [ $(uname "-m") == "x86_64" ]; then
