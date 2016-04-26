@@ -1,4 +1,5 @@
-# ☠ AnonBlog ☠
+![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
+
 Anonblog lets you easily publish blogs/static sites over the Tor network for anonymity, using a small, lightweight, and extremely secure webserver to prevent being deanonymized.
 
 ## Usage
@@ -10,9 +11,30 @@ Usage is simple - No installation required!
  - Post to your blog by running `./bb.sh`. To add custom files, images, etc., put them under `site`. (You can also put any other files you want there.)
 - [See here for more information regarding using bashblog (You can use markdown 😁)](https://github.com/cfenollosa/bashblog)
 
+## Building
 
-## Warning
+The current build is for x86-64 proccessors
 
-Tor is not fool proof, & although we believe this software to be better 'out of the box' than Apache/similar for .onion blogs, something may still go wrong and compromise your identity. Please keep this in mind.
+The webserver source is src/bbserver.c
+
+It can be built using 'make bbserver.c' using GCC 5.8.6 (other versions/compilers untested)
+
+
+## Warning - *Important Info*
+
+Anonblog is in alpha right now, while we believe it is "pretty good", you should never bet your life or liberty on software, especially software in early development.
+
+
+**ALSO**:
+
+This software is intended to host only static blogs/sites. This is not good software fort things like fourms, chat rooms, etc.
 
 Also, Tor its self is vulnerable to correlation attacks, which may unmask you and your visitors.
+
+In any case, the longer a hidden service is ran, the higher its chance of being compromised is, regardless of the server software it is running.
+
+Also, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
+
+**Be sure to scrub any images/other files of metadata before publishing them**
+
+Tor & the Onion logo are registered trademarks of The Tor Project, Inc. This software is not endorsed by or affiliated with The Tor Project, Inc.
