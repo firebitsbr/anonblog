@@ -77,4 +77,4 @@ Tip us coffee money to motivate us to keep doing what we do:
 - [Kevin Froman](https://chaoswebs.net/?page=about) and [Duncan X. Simpson](https://www.k7dxs.xyz/), the main AnonBlog devs.
 
 
-&copy;Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information. Tor & the Onion logo are registered trademarks of The Tor Project, Inc. This software is not endorsed by or affiliated with The Tor Project, Inc.
+Copyright &copy; 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information. Tor & the Onion logo are registered trademarks of The Tor Project, Inc. This software is not endorsed by or affiliated with The Tor Project, Inc.
