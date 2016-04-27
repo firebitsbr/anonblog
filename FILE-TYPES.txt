@@ -1,4 +1,4 @@
-These are the supported file types for your website:
+These are the default supported file types in AnonBlog. You can add or remove filetypes as you please by editing bbserver.c and recompiling, but note that it won't magically support server-side languages such as PHP.
   
 gif
 jpg
