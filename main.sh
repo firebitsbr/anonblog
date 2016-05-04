@@ -5,7 +5,6 @@ if [ $(uname "-m") == "x86_64" ]; then
 	TOR_EXECUTABLE="bin/tor64"
 else
 	TOR_EXECUTABLE="bin/tor"
-	
 fi
 sed -i.bak '2s/.*/HiddenServicePort 80 127.0.0.1:'$PORT'/' config/torrc
 if [ $# == 1 ]; then
@@ -26,6 +25,8 @@ if [ $COMMAND == "start" ]; then
 		exit
 	fi
 	echo "Your .onion address will be in the 'keys' folder, if you care about it, remember to safely back it up!"
+	echo ""
+	echo "Tor can take a minute or so to publish hidden services."
 	echo ""
 	echo "Started. Press Ctrl+C to exit."
 	$TOR_EXECUTABLE --quiet -f config/torrc
