@@ -60,6 +60,8 @@ The webserver source is in src/bbserver.c
 
 It can be built using GCC 5.8.6 (other versions/compilers untested)
 
+The Tor source code can be obtained [here](https://www.torproject.org/download/download.html.en).
+
 ## Donate
 
 ![BTC logo](http://i.imgur.com/UQsoecv.png)
