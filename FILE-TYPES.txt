@@ -27,3 +27,6 @@ mp3
 wav
 asc
 txt
+woff
+woff2
+ttf

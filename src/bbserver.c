@@ -48,6 +48,9 @@ struct {
 	{"wav", "audio/wav"},
 	{"asc", "application/pgp-keys"},
 	{"txt", "text/plain"},
+	{"woff", "application/font-woff"},
+	{"woff2", "application/font-woff2"},
+	{"ttf", "application/font-sfnt "},
 	{0,0} };
 
 void logger(int type, char *s1, char *s2, int socket_fd)
@@ -140,7 +143,7 @@ void web(int fd, int hit)
 	logger(LOG,"SEND",&buffer[5],hit);
 	len = (long)lseek(file_fd, (off_t)0, SEEK_END); /* lseek to the file end to find the length */
 	      (void)lseek(file_fd, (off_t)0, SEEK_SET); /* lseek back to the file start ready for reading */
-          (void)sprintf(buffer,"HTTP/1.1 200 OK\nServer: anonymous/%d.0\nContent-Length: %ld\nConnection: close\nContent-Type: %s\n\n", VERSION, len, fstr); /* Header + a blank line */
+          (void)sprintf(buffer,"HTTP/1.1 200 OK\nServer: nginx\nContent-Length: %ld\nConnection: close\nContent-Type: %s\n\n", len, fstr); /* Header + a blank line */
 	logger(LOG,"Header",buffer,hit);
 	(void)write(fd,buffer,strlen(buffer));
 
