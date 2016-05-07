@@ -50,7 +50,7 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
 ## Contributing
 
-Anyone that knows shell scripting, C, or in depth Tor knowledge is welcome to contribute here.
+Anyone that knows shell scripting, C, or in depth Tor knowledge is welcome to contribute here, via pull request.
 
 ## Building
 
