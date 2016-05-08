@@ -66,7 +66,7 @@ The Tor source code can be obtained [here](https://www.torproject.org/download/d
 
 ![BTC logo](http://i.imgur.com/UQsoecv.png)
 
-Tip us coffee money to motivate us to keep doing what we do:
+If you have some satoshi to spare, consider sending us a tip:
 
 137aLmDHUCJKv7s8yzNBZ6dE2erob55YF5
 
