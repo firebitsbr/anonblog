@@ -42,7 +42,7 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
 - Hidden services can also be discovered by bad Tor nodes (their existence, not nessasarily their location). This is a limitation in the Tor network rather than in Anonblog.
 
-- Be sure to scrub any images/other files of metadata before publishing them.
+- Be sure to scrub any images/other files of metadata before publishing them, [see here for more info](https://en.wikipedia.org/wiki/Exif#Privacy_and_security).
 
 
 **For more information regarding Tor hidden services, see https://www.torproject.org/docs/hidden-services.html.en.**
