@@ -1,14 +1,18 @@
 ![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
 
-AnonBlog is an easy way to anonymously publish blogs/static sites over the Tor network, using a small, lightweight, and secure webserver to prevent being deanonymized.
+AnonBlog is an easy way to anonymously publish blogs and static sites over the Tor network, using a small, lightweight, and secure webserver.
 
 The goal of this project is to be secure, lightweight, & simple, while maintaining easy portability to all Unix based systems.
+
+When hosting static websties, AnonBlog has many advantages due to its lightweight nature. 
+
+It has no complex features such as Apache, Lighttpd, or Nginx, which are often how many hidden services are compromised.
 
 **Before using or contributing to this project, please fully read everything here**.
 
 ## Download Binary Release
 
-It is recommended that you build the software yourself, but a binary release is available, [Here](https://github.com/beardog108/anonblog/releases).
+It is recommended that you build the software yourself, but a compiled release is available, [here](https://github.com/beardog108/anonblog/releases).
 
 ## Usage
 
@@ -19,9 +23,9 @@ Usage is simple - No installation required!
  - Post to your blog by running `./bb.sh`. To add custom files, images, etc., put them under `site`. (You can also put any other files you want there.)
 - [See here for more information regarding using bashblog.](https://github.com/cfenollosa/bashblog)
 
-The current build is for x86-64 proccessors.
+The current release is for standard x86-64 proccessors, but it can be compiled for x86 and ARM systems such as the [Raspberry Pi](https://www.raspberrypi.org/).
 
-**Anonblog supports a limited amount of file extensions for security reasons, see FILE-TYPES.txt**
+**Anonblog supports a limited amount of file extensions, see FILE-TYPES.txt**
 
 ## Warning - *Important Info*
 
@@ -73,8 +77,8 @@ If you have some satoshi to spare, consider sending us a tip:
 
 ## Thanks to:
 
-- [The Tor Project](https://torproject.org/) for creating Tor.
-- Nigel Griffiths (nag@uk.ibm.com) for creating Nweb (bbserver is based on Nweb)
+- [The Tor Project](https://torproject.org/), for creating Tor.
+- Nigel Griffiths (nag@uk.ibm.com), for creating the website 'Nweb' (bbserver is based on Nweb)
 - All who contributed to [Bashblog](https://github.com/cfenollosa/bashblog), a static blog generator included with AnonBlog.
 - [Kevin Froman](https://chaoswebs.net/?page=about) and [Duncan X. Simpson](https://www.k7dxs.xyz/), the main AnonBlog devs.
 
