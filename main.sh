@@ -1,5 +1,14 @@
 #!/bin/bash
 # Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information.
+
+# Make sure we are operating in the scripts path
+SCRIPT=$(readlink -f "$0")
+
+SCRIPTPATH=$(dirname "$SCRIPT")
+echo $SCRIPTPATH
+cd $SCRIPTPATH
+
+
 source config/abconfig
 export LD_LIBRARY_PATH="./lib"
 if [ $(uname "-m") == "x86_64" ]; then
