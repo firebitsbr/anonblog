@@ -48,6 +48,8 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
 - Be sure to scrub any images/other files of metadata before publishing them, [see here for more info](https://en.wikipedia.org/wiki/Exif#Privacy_and_security).
 
+- By default, your server is only accessible through localhost or Tor. Allowing your server to be accessed by other IPs (by setting 'blockOther' to 'false') is dangerous and could lead to your real IP address being revealed.
+
 
 **For more information regarding Tor hidden services, see https://www.torproject.org/docs/hidden-services.html.en.**
 
