@@ -1,6 +1,6 @@
 ![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
 
-AnonBlog is an easy way to anonymously publish blogs and static sites over the Tor network, using a small, lightweight, and secure webserver.
+[AnonBlog](https://chaoswebs.net/anonblog/) is an easy way to anonymously publish blogs and static sites over the Tor network, using a small, lightweight, and secure webserver.
 
 The goal of this project is to be secure, lightweight, & simple, while maintaining easy portability to all Unix based systems.
 
@@ -29,7 +29,7 @@ The current release is for standard x86-64 proccessors, but it can be compiled f
 
 ## Warning - *Important Info*
 
-Anonblog is in alpha right now, while we believe it is "pretty good", you should never bet your life or liberty on software, especially software in early development.
+AnonBlog is in beta right now, while we believe it is "pretty good", you should never bet your life or liberty on software, especially software in early development.
 
 
 **ALSO**:
@@ -55,7 +55,7 @@ Anonblog is in alpha right now, while we believe it is "pretty good", you should
 
 ## Contributing
 
-Anyone that knows shell scripting, C, or in depth Tor knowledge is welcome to contribute here, via pull request.
+Anyone that knows shell scripting, C, or in depth Tor knowledge is welcome to contribute. Get in touch with us if you are contributing non-trivial changes.
 
 ## Building
 
@@ -74,6 +74,10 @@ The Tor source code can be obtained [here](https://www.torproject.org/download/d
 If you have some satoshi to spare, consider sending us a tip:
 
 137aLmDHUCJKv7s8yzNBZ6dE2erob55YF5
+
+## Get In Touch
+
+[Contact us if you have any questions or want to contribute](https://chaoswebs.net/?page=contact).
 
 
 ## Thanks to:
