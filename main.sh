@@ -1,6 +1,17 @@
 #!/bin/bash
 # Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information.
 
+# Set lock file name
+lock=".anonblog-LOCK"
+
+if [ -f $lock ];
+then
+	echo "AnonBlog appears to already be running."
+	echo ""
+	echo "If it crashed last time, delete $lock."
+	exit
+fi
+
 # Make sure we are operating in the scripts path
 SCRIPT=$(readlink -f "$0")
 
@@ -24,6 +35,8 @@ else
 fi
 
 if [ $COMMAND == "start" ]; then
+
+	touch $lock
 
 	echo "Starting AnonBlog..."
 	echo ""
@@ -101,8 +114,13 @@ if [ $COMMAND == "start" ]; then
 			echo 'There seems to have been an issue encrypting the private key. File remains unencrypted'
 		fi
 	fi
+	
+	# Kill web server, delete lock file.
 
 	killall bbserver
+
+	rm $lock
+
 elif [ $COMMAND == "help" ]; then
 	echo "Syntax: ./main.sh [start]"
 	echo "For more help see the README."
