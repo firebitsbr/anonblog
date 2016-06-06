@@ -107,7 +107,7 @@ if [ $COMMAND == "start" ]; then
 		openssl enc -aes-256-cbc -a -salt -in ./keys/private_key -out ./keys/private_key.aes
 		if [ -f "./keys/private_key.aes" ];
 		then
-			echo 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' > ./keys/private_key
+			shred ./keys/private_key
 			rm ./keys/private_key
 			echo 'Key successfuly encrypted'
 		else
