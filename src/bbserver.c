@@ -50,7 +50,8 @@ struct {
 	{"txt", "text/plain"},
 	{"woff", "application/font-woff"},
 	{"woff2", "application/font-woff2"},
-	{"ttf", "application/font-sfnt "},
+	{"ttf", "application/font-sfnt"},
+	{"rss", "application/rss+xml"},
 	{0,0} };
 
 void logger(int type, char *s1, char *s2, int socket_fd)

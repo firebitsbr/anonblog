@@ -30,3 +30,4 @@ txt
 woff
 woff2
 ttf
+rss
