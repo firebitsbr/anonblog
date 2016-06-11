@@ -6,7 +6,7 @@ The goal of this project is to be secure, lightweight, & simple, while maintaini
 
 When hosting static websties, AnonBlog has many advantages due to its lightweight nature. 
 
-It has no complex features such as Apache, Lighttpd, or Nginx, which are often how many hidden services are compromised.
+AnonBlog has no complex features or bloat that Apache, Lighttpd, and Nginx have, which are often how many hidden services are compromised.
 
 **Before using or contributing to this project, please fully read everything here**.
 
