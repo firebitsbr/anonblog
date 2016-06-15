@@ -81,13 +81,15 @@ if [ $COMMAND == "start" ]; then
 
 	killall bbserver 2> /dev/null
 	echo ""
-	bin/bbserver $PORT ./site/
-	pgrep bbserver > /dev/null
-	RESULT=$?
-	if [ ! "${RESULT}" -eq "0" ]; then
-		echo "It seems the server failed to start. Please try again."
-		exit
-	fi
+	bin/bbserver $PORT ./site/ & disown
+    BBPID=$(($!+2))
+	# bbserver doesn't fail if bad port
+	#pgrep bbserver > /dev/null
+	#RESULT=$?
+	#if [ ! "${RESULT}" -eq "0" ]; then
+	#	echo "It seems the server failed to start. Please try again."
+	#	exit
+	#fi
 	echo "Your .onion address will be in the 'keys' folder, back it up if you care about it!"
 	echo ""
 	echo "Tor can take a minute or so to publish hidden services."
@@ -117,7 +119,7 @@ if [ $COMMAND == "start" ]; then
 	
 	# Kill web server, delete lock file.
 
-	killall bbserver
+	kill $BBPID
 
 	rm $lock
 
