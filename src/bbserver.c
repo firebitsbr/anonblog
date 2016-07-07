@@ -181,7 +181,7 @@ int main(int argc, char **argv)
 	    !strncmp(argv[2],"/bin",5 ) || !strncmp(argv[2],"/lib", 5 ) ||
 	    !strncmp(argv[2],"/tmp",5 ) || !strncmp(argv[2],"/usr", 5 ) ||
 	    !strncmp(argv[2],"/dev",5 ) || !strncmp(argv[2],"/sbin",6) ){
-		(void)printf("ERROR: Bad top directory %s, see nweb -?\n",argv[2]);
+		(void)printf("ERROR: Bad top directory %s, see bbserver -?\n",argv[2]);
 		exit(3);
 	}
 	if(chdir(argv[2]) == -1){ 
