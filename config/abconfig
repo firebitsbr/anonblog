@@ -1,3 +1,2 @@
 PORT=8000
 encryptPrivate=false
-blockOther=true

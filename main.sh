@@ -58,26 +58,6 @@ if [ $COMMAND == "start" ]; then
 			fi
 		done
 	fi
-	
-	# Detect if Anonblog should set iptables firewall rules to block other ips from accessing the server
-
-	if [[ $blockOther == true ]]
-	then
-		echo "Iptables will protect your server, you may need to enter your root password."
-		sudo iptables -N anonblog > /dev/null
-		RESULT=$?
-		if [[ "${RESULT}" -eq "1" ]]
-		then
-			echo "Iptables rules already set."
-		else
-			echo "Setting iptables rules."
-			sudo iptables -A anonblog --src 127.0.0.1 -j ACCEPT
-			sudo iptables -A anonblog -j DROP
-			sudo iptables -I INPUT -m tcp -p tcp --dport $PORT -j anonblog
-		fi
-	else
-		echo "WARN: Allowing other IPs can be dangerous. See docs for more information."
-	fi
 
 	killall bbserver 2> /dev/null
 	echo ""
