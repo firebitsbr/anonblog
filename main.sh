@@ -22,11 +22,16 @@ cd $SCRIPTPATH
 source config/abconfig
 
 export LD_LIBRARY_PATH="./lib"
+
 if [ $(uname "-m") == "x86_64" ]; then
 	TOR_EXECUTABLE="bin/tor64"
+	BB_EXECUTABLE="bbserver64"
 else
 	TOR_EXECUTABLE="bin/tor"
+	BB_EXECUTABLE="bbserver"
 fi
+
+
 sed -i.bak '2s/.*/HiddenServicePort 80 127.0.0.1:'$PORT'/' config/torrc
 if [ $# == 1 ]; then
 	COMMAND=$1
@@ -59,9 +64,9 @@ if [ $COMMAND == "start" ]; then
 		done
 	fi
 
-	killall bbserver 2> /dev/null
+	killall $BB_EXECUTABLE 2> /dev/null
 	echo ""
-	bin/bbserver $PORT ./site/ & disown
+	bin/$BB_EXECUTABLE $PORT ./site/ & disown
     BBPID=$(($!+2))
 	# bbserver doesn't fail if bad port
 	#pgrep bbserver > /dev/null
