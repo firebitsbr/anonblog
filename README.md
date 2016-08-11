@@ -43,6 +43,8 @@ AnonBlog is in beta right now, while we believe it is "pretty good", you should 
 
 - Your sites content, writing style, regional language, slang, dialects, and more may point to your relative geographic location.
 
+- You should write as generically and normally as possible, as any quirks may help to unmask you. Remember, many Tor users are compromised through standard detective work, not just tech hacking.
+
 - Note: Your ISP/others can generally see that you are using the Tor network (but not what you do with it), this is not a major deal in "more free" countries, but in some areas this may warrant suspicion of your activites.
 
 - Hidden services can also be discovered by bad Tor nodes (their existence, not nessasarily their location). This is a limitation in the Tor network rather than in Anonblog.
