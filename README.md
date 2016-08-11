@@ -22,6 +22,7 @@ Usage is simple - No installation required!
      - **Optional:** You can change the port that the server uses by editing `config/abconfig`. The hidden service will always be accessible on port 80, no matter what port the server itself runs on.
  - Post to your blog by running `./bb.sh`. To add custom files, images, etc., put them under `site`. (You can also put any other files you want there.)
 - [See here for more information regarding using bashblog.](https://github.com/cfenollosa/bashblog)
+- The server runs in the foreground by default, to run as a background process do 'nohup ./main.sh start & disown'
 
 The current release is for standard x86-64 proccessors, but it can be compiled for x86 and ARM systems such as the [Raspberry Pi](https://www.raspberrypi.org/).
 
