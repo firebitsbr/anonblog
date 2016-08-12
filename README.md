@@ -85,7 +85,7 @@ If you have some satoshi to spare, consider sending us a tip:
 ## Thanks to:
 
 - [The Tor Project](https://torproject.org/), for creating Tor.
-- Nigel Griffiths (nag@uk.ibm.com), for creating the website 'Nweb' (bbserver is based on Nweb)
+- Nigel Griffiths (nag@uk.ibm.com), for creating the web server 'Nweb' (bbserver is based on Nweb)
 - All who contributed to [Bashblog](https://github.com/cfenollosa/bashblog), a static blog generator included with AnonBlog.
 - [Kevin Froman](https://chaoswebs.net/?page=about) and [Duncan X. Simpson](https://www.k7dxs.xyz/), the main AnonBlog devs.
 
