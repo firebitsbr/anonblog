@@ -71,7 +71,7 @@ The Tor source code can be obtained [here](https://www.torproject.org/download/d
 
 ## Donate
 
-![BTC logo](http://i.imgur.com/UQsoecv.png)
+![BTC logo](https://en.bitcoin.it/w/images/en/8/8c/RibbonDonateBitcoin.png)
 
 If you have some satoshi to spare, consider sending us a tip:
 
