@@ -1,6 +1,6 @@
 ![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
 
-[AnonBlog](https://chaoswebs.net/anonblog/) is an easy way to anonymously publish blogs and static sites over the Tor network, using a small, lightweight, and secure webserver.
+[AnonBlog](https://chaoswebs.net/anonblog/) is an easy way to anonymously publish blogs and static sites over the Tor network, using a small, lightweight, and secure web server.
 
 The goal of this project is to be secure, lightweight, & simple, while maintaining easy portability to all Unix based systems.
 
@@ -24,9 +24,9 @@ Usage is simple - No installation required!
 - [See here for more information regarding using bashblog.](https://github.com/cfenollosa/bashblog)
 - The server runs in the foreground by default, to run as a background process do 'nohup ./main.sh start & disown'
 
-The current release is for standard x86-64 proccessors, but it can be compiled for x86 and ARM systems such as the [Raspberry Pi](https://www.raspberrypi.org/).
+The current release is for standard x86-64 processors, but it can be compiled for x86 and ARM systems such as the [Raspberry Pi](https://www.raspberrypi.org/).
 
-**Anonblog supports a limited amount of file extensions, see FILE-TYPES.txt**
+**AnonBlog supports a limited amount of file extensions, see FILE-TYPES.txt**
 
 ## Warning - *Important Info*
 
@@ -61,13 +61,17 @@ Anyone that knows shell scripting, C, or in depth Tor knowledge is welcome to co
 
 ## Building
 
-The current build is for x86-64 proccessors
+The current build is for x86-64 processors
 
-The webserver source is in src/bbserver.c
+The web server source is in src/bbserver.c
 
 It can be built using GCC 5.8.6 (other versions/compilers untested)
 
+It is **highly** recommended that you build the source code yourself, both of our web server and Tor.
+
 The Tor source code can be obtained [here](https://www.torproject.org/download/download.html.en).
+
+If you build Tor, replace the Tor binary in bin/, 'tor' if your machine is 32-bit and 'tor64' if your machine is 64-bit (x86 architecture)
 
 ## Donate
 
