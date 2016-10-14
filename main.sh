@@ -18,8 +18,21 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 cd $SCRIPTPATH
 
+if [ ! $(which shred 2>/dev/null) ]; then
+  echo "You don't have source installed. Will now quit."
+	exit 1
+fi
 
 source config/abconfig
+
+# Check for dependencies
+if [ ! $(which shred 2>/dev/null) ]; then
+  echo "You don't have shred installed. You cannot use the private key encryption feature."
+fi
+if [ ! $(which nc 2>/dev/null) ]; then
+	echo "You don't have netcat (nc) installed. Falling back to predefined port."
+	randomPort=false
+fi
 
 export LD_LIBRARY_PATH="./lib"
 
@@ -40,7 +53,7 @@ if [ $randomPort == true ]; then
 		if [ $? == 1 ]; then
 			break
 		fi
-	
+
 	done
 fi
 
@@ -108,7 +121,7 @@ if [ $COMMAND == "start" ]; then
 			echo 'There seems to have been an issue encrypting the private key. File remains unencrypted.'
 		fi
 	fi
-	
+
 	# Kill web server, delete lock file.
 
 	kill $BBPID
