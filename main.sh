@@ -31,6 +31,18 @@ else
 	BB_EXECUTABLE="bbserver"
 fi
 
+# Get a random port number if randomPort is true (it is by default), if not use PORT set in the config.
+if [ $randomPort == true ]; then
+	while true
+	do
+		PORT=$(($RANDOM$RANDOM$RANDOM%65000+1024))
+		nc -z 127.0.0.1 $PORT
+		if [ $? == 1 ]; then
+			break
+		fi
+	
+	done
+fi
 
 sed -i.bak '2s/.*/HiddenServicePort 80 127.0.0.1:'$PORT'/' config/torrc
 if [ $# == 1 ]; then
@@ -71,6 +83,8 @@ if [ $COMMAND == "start" ]; then
 	echo "Your .onion address will be in the 'keys' folder, back it up if you care about it!"
 	echo ""
 	echo "Tor can take a minute or so to publish hidden services."
+	echo ""
+	echo "Internal port set to $PORT."
 	echo ""
 	echo "Started. Press Ctrl+C to exit."
 	$TOR_EXECUTABLE --quiet -f config/torrc
