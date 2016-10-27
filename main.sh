@@ -93,11 +93,18 @@ if [ $COMMAND == "start" ]; then
 	echo ""
 	bin/$BB_EXECUTABLE $PORT ./site/ & disown
     BBPID=$(($!+2))
-	echo "Your .onion address will be in the 'keys' folder, back it up if you care about it!"
+
+
+	if [ -f "keys/hostname" ];
+	then
+		printf "Hidden service at: "; cat keys/hostname
+	else
+		echo "Your .onion address will be in the 'keys' folder, back it up if you care about it!"
+	fi
 	echo ""
 	echo "Tor can take a minute or so to publish hidden services."
 	echo ""
-	echo "Internal port set to $PORT."
+	echo "HTTP server internal port set to $PORT. View your site locally at http://127.0.0.1:$PORT"
 	echo ""
 	echo "Started. Press Ctrl+C to exit."
 	$TOR_EXECUTABLE --quiet -f config/torrc
