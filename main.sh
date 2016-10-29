@@ -28,6 +28,14 @@ source config/abconfig
 # Check for dependencies
 if [ ! $(which shred 2>/dev/null) ]; then
   echo "You don't have shred installed. You cannot use the private key encryption feature."
+	encryptPrivate=false;
+fi
+if [ ! $(which openssl 2>/dev/null) ]; then
+	echo "You don't have openssl installed. You cannot use the private key encryption feature."
+	encryptPrivate=false;
+	opensslInstalled=false;
+else
+	opensslInstalled=true;
 fi
 if [ ! $(which nc 2>/dev/null) ]; then
 	echo "You don't have netcat (nc) installed. Falling back to predefined port."
@@ -74,17 +82,27 @@ if [ $COMMAND == "start" ]; then
 
 	if [ -f "./keys/private_key.aes" ];
 	then
+		if [[ $opensslInstalled == false ]]; then
+			echo "Private key appears encrypted, but you don't have openssl installed. Exiting."
+			rm $lock
+			exit 1
+		fi
 		while [ 1 == 1 ]
 		do
 			echo ""
 			echo "Password to Decrypt Private Key:"
 			openssl enc -d -aes-256-cbc -a -salt -in ./keys/private_key.aes -out ./keys/private_key
-			echo ""
-			if [ -f "./keys/private_key" ];
-			then
-				rm ./keys/private_key.aes
-				echo "Key successfully decrypted."
-				break
+			if [ $? != 0  ]; then
+				echo "Failed to decrypt file."
+				rm  keys/private_key 2> /dev/null
+			else
+				echo ""
+				if [ -f "./keys/private_key" ];
+				then
+					rm ./keys/private_key.aes
+					echo "Key successfully decrypted."
+					break
+				fi
 			fi
 		done
 	fi
@@ -113,21 +131,40 @@ if [ $COMMAND == "start" ]; then
 		$TOR_EXECUTABLE -f config/torrc
 	fi
 
-	if [[ $encryptPrivate == true ]]
-	then
-		echo ""
-		echo "Password to encrypt private key (DO NOT LOSE IT!)."
-		echo ""
-		openssl enc -aes-256-cbc -a -salt -in ./keys/private_key -out ./keys/private_key.aes
-		if [ -f "./keys/private_key.aes" ];
+	while [ 1 == 1 ]
+	do
+		if [[ $encryptPrivate == true ]]
 		then
-			shred ./keys/private_key
-			rm ./keys/private_key
-			echo 'Key successfuly encrypted'
+			echo ""
+			echo "Password to encrypt private key (DO NOT LOSE IT!)."
+			echo ""
+			openssl enc -aes-256-cbc -a -salt -in ./keys/private_key -out ./keys/private_key.aes
+			if [ -f "./keys/private_key.aes" ];
+			then
+				shred ./keys/private_key
+				rm ./keys/private_key
+				echo 'Key successfuly encrypted'
+				break
+			else
+				if [ -f "./keys/private_key" ];
+				then
+					echo 'There seems to have been an issue encrypting the private key. File remains unencrypted.'
+						read -p "Try again (y/n)?" again
+						if [[ $again == 'y' || $again == 'Y' ]]
+						then
+							echo "Trying again."
+						else
+							echo "Exiting. Private key remains unecrypted."
+							break
+						fi
+				else
+					echo 'There seems to have been an issue encrypting the private key.'
+				fi
+			fi
 		else
-			echo 'There seems to have been an issue encrypting the private key. File remains unencrypted.'
+			break
 		fi
-	fi
+	done
 
 	# Kill web server, delete lock file.
 
