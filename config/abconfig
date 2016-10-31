@@ -1,3 +1,4 @@
 randomPort=true
 PORT=8000
 encryptPrivate=false
+colors=true

@@ -1,12 +1,12 @@
 #!/bin/bash
-# Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information.
+# Copyright 2016 Kevin Froman and Duncan X. Simpson. See the license file for more information
 
 # Set lock file name
 lock=".anonblog-LOCK"
 
 if [ -f $lock ];
 then
-	echo "AnonBlog appears to already be running."
+	echo "AnonBlog appears to already be running. ¯\_(ツ)_/¯"
 	echo ""
 	echo "If it crashed last time, delete $lock."
 	exit
@@ -19,26 +19,37 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 cd $SCRIPTPATH
 
 if [ ! $(which shred 2>/dev/null) ]; then
-  echo "You don't have source installed. Will now quit."
+  echo -e "${RED}You don't have source installed. Will now quit${NC}."
 	exit 1
 fi
 
 source config/abconfig
 
+# Colors config
+if [ $colors == true ]; then
+	RED='\033[0;31m'
+	NC='\033[0m' # No Color
+	GREEN='\033[0;32m'
+else
+	RED=''
+	NC=''
+	GREEN=''
+fi
+
 # Check for dependencies
 if [ ! $(which shred 2>/dev/null) ]; then
-  echo "You don't have shred installed. You cannot use the private key encryption feature."
+  echo -e "${RED}You don't have shred installed. You cannot use the private key encryption feature${NC}."
 	encryptPrivate=false;
 fi
 if [ ! $(which openssl 2>/dev/null) ]; then
-	echo "You don't have openssl installed. You cannot use the private key encryption feature."
+	echo -e "${RED}You don't have openssl installed. You cannot use the private key encryption feature${NC}."
 	encryptPrivate=false;
 	opensslInstalled=false;
 else
 	opensslInstalled=true;
 fi
 if [ ! $(which nc 2>/dev/null) ]; then
-	echo "You don't have netcat (nc) installed. Falling back to predefined port."
+	echo "${RED}You don't have netcat (nc) installed. Falling back to predefined port${NC}."
 	randomPort=false
 fi
 
@@ -83,7 +94,7 @@ if [ $COMMAND == "start" ]; then
 	if [ -f "./keys/private_key.aes" ];
 	then
 		if [[ $opensslInstalled == false ]]; then
-			echo "Private key appears encrypted, but you don't have openssl installed. Exiting."
+			echo "${RED}Private key appears encrypted, but you don't have openssl installed. Exiting${NC}."
 			rm $lock
 			exit 1
 		fi
@@ -93,14 +104,14 @@ if [ $COMMAND == "start" ]; then
 			echo "Password to Decrypt Private Key:"
 			openssl enc -d -aes-256-cbc -a -salt -in ./keys/private_key.aes -out ./keys/private_key
 			if [ $? != 0  ]; then
-				echo "Failed to decrypt file."
+				echo -e "${RED}Failed to decrypt file.${NC}"
 				rm  keys/private_key 2> /dev/null
 			else
 				echo ""
 				if [ -f "./keys/private_key" ];
 				then
 					rm ./keys/private_key.aes
-					echo "Key successfully decrypted."
+					echo -e "${GREEN}Key successfully decrypted${NC}."
 					break
 				fi
 			fi
@@ -115,7 +126,7 @@ if [ $COMMAND == "start" ]; then
 
 	if [ -f "keys/hostname" ];
 	then
-		printf "Hidden service at: "; cat keys/hostname
+		printf "${GREEN}Hidden service at${NC}: "; cat keys/hostname
 	else
 		echo "Your .onion address will be in the 'keys' folder, back it up if you care about it!"
 	fi
@@ -124,7 +135,7 @@ if [ $COMMAND == "start" ]; then
 	echo ""
 	echo "HTTP server internal port set to $PORT. View your site locally at http://127.0.0.1:$PORT"
 	echo ""
-	echo "Started. Press Ctrl+C to exit."
+	echo -e "${GREEN}Started. Press Ctrl+C to exit${NC}."
 	$TOR_EXECUTABLE --quiet -f config/torrc
 	if [ $? != 0  ]; then
 		echo "It seems Tor failed to start. Rerunning with output enabled."
@@ -136,29 +147,29 @@ if [ $COMMAND == "start" ]; then
 		if [[ $encryptPrivate == true ]]
 		then
 			echo ""
-			echo "Password to encrypt private key (DO NOT LOSE IT!)."
+			echo -e "Password to encrypt private key ${RED}(DO NOT LOSE IT!)${NC}."
 			echo ""
 			openssl enc -aes-256-cbc -a -salt -in ./keys/private_key -out ./keys/private_key.aes
 			if [ -f "./keys/private_key.aes" ];
 			then
 				shred ./keys/private_key
 				rm ./keys/private_key
-				echo 'Key successfuly encrypted'
+				echo -e "${GREEN}Key successfuly encrypted${NC}."
 				break
 			else
 				if [ -f "./keys/private_key" ];
 				then
-					echo 'There seems to have been an issue encrypting the private key. File remains unencrypted.'
+					echo -e "${RED}There seems to have been an issue encrypting the private key. File remains unencrypted${NC}."
 						read -p "Try again (y/n)?" again
 						if [[ $again == 'y' || $again == 'Y' ]]
 						then
 							echo "Trying again."
 						else
-							echo "Exiting. Private key remains unecrypted."
+							echo -e "Exiting. ${RED}Private key remains unecrypted${NC}."
 							break
 						fi
 				else
-					echo 'There seems to have been an issue encrypting the private key.'
+					echo -e "${RED}There seems to have been an issue encrypting the private key${NC}."
 				fi
 			fi
 		else
@@ -171,10 +182,10 @@ if [ $COMMAND == "start" ]; then
 	kill $BBPID
 
 	rm $lock
-
 elif [ $COMMAND == "help" ]; then
 	echo "Syntax: ./main.sh [start]"
 	echo "For more help see the README."
 else
 	echo "Unrecognized command. Run with no args for help."
 fi
+exit 0
