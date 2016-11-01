@@ -197,7 +197,9 @@ elif [ $COMMAND == "local" ]; then
 	kill $BBPID
 	rm $lock
 elif [ $COMMAND == "help" ]; then
-	echo "Syntax: ./main.sh [start]"
+	echo "start - start the onion service"
+	echo "local - start the web server only. Use this during website development"
+	echo "Syntax: ./main.sh [command]"
 	echo "For more help see the README."
 else
 	echo "Unrecognized command. Run with no args for help."
