@@ -182,6 +182,20 @@ if [ $COMMAND == "start" ]; then
 	kill $BBPID
 
 	rm $lock
+elif [ $COMMAND == "local" ]; then
+	touch $lock
+	killall $BB_EXECUTABLE 2> /dev/null
+	echo ""
+	bin/$BB_EXECUTABLE $PORT ./site/ & disown
+		BBPID=$(($!+2))
+	echo "HTTP server internal port set to $PORT. View your site locally at http://127.0.0.1:$PORT"
+	echo ""
+	echo -e "${RED}Notice: onion service not running. You are in dev mode${NC}."
+	echo -e "${GREEN}Started test server on localhost. Press enter to exit${NC}."
+	# Kill web server, delete lock file.
+	read
+	kill $BBPID
+	rm $lock
 elif [ $COMMAND == "help" ]; then
 	echo "Syntax: ./main.sh [start]"
 	echo "For more help see the README."
