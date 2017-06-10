@@ -1,3 +1,5 @@
+## CURRENTLY ON DEVELOPMENTAL HIATUS. NOT MAINTAINED.
+
 ![Anonblog logo](http://i.imgur.com/tJMcQqs.png)
 
 [AnonBlog](https://chaoswebs.net/anonblog/) is an easy way to anonymously publish blogs and static sites over the Tor network, using a small, lightweight, and secure web server.
