@@ -14,6 +14,8 @@ AnonBlog has no complex features or bloat that Apache, Lighttpd, and Nginx have,
 
 ## Download Binary Release
 
+**This software is no longer maintained, do not use. May be brought back with better security & features in the future**
+
 It is recommended that you build the software yourself, but a compiled release is available, [here](https://github.com/beardog108/anonblog/releases).
 
 ## Usage
